@@ -42,7 +42,8 @@ let package = Package(
                 .define("GGML_USE_ACCELERATE"),
                 // NOTE: NEW_LAPACK requires iOS version 16.4+
                 .define("ACCELERATE_NEW_LAPACK"),
-                .define("ACCELERATE_LAPACK_ILP64"),
+                // NOTE: ILP64 gets rejected from the app store
+                // .define("ACCELERATE_LAPACK_ILP64"),
             ],
             linkerSettings: [
                 .linkedFramework("Accelerate")
