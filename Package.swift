@@ -37,6 +37,7 @@ let package = Package(
             cSettings: [
                 .unsafeFlags(["-Wno-shorten-64-to-32", "-O3", "-DNDEBUG"]),
                 .unsafeFlags(["-fno-objc-arc"]),
+                .unsafeFlags(["-mfma", "-mfma", "-mavx", "-mavx2", "-mf16c", "-msse3", "-mssse3"]), // for Intel CPUs
                 .define("SWIFT_PACKAGE"),
                 .define("GGML_USE_METAL"),
                 .define("GGML_USE_ACCELERATE"),
