@@ -6,7 +6,7 @@ let package = Package(
     name: "llama",
     platforms: [
         .macOS(.v12),
-        .iOS(.v16),
+        .iOS(.v14),
         .watchOS(.v4),
         .tvOS(.v14)
     ],
@@ -40,8 +40,8 @@ let package = Package(
                 .define("SWIFT_PACKAGE"),
                 .define("GGML_USE_METAL"),
                 .define("GGML_USE_ACCELERATE"),
-                // NOTE: NEW_LAPACK requires iOS version 16.4+
-                .define("ACCELERATE_NEW_LAPACK"),
+                // NOTE: NEW_LAPACK requires iOS version 16.4+ but fails App Store validation
+                // .define("ACCELERATE_NEW_LAPACK"),
                 // NOTE: ILP64 gets rejected from the app store
                 // .define("ACCELERATE_LAPACK_ILP64"),
             ],
